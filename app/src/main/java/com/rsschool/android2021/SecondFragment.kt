@@ -45,7 +45,6 @@ class SecondFragment : Fragment() {
     }
 
     private fun generate(min: Int, max: Int): Int {
-        // TODO: generate random number
         return Random.nextInt(min, max + 1)
     }
 

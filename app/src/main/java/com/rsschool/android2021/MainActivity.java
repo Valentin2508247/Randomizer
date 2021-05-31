@@ -12,12 +12,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class MainActivity extends AppCompatActivity implements FirstFragment.FirstFragmentListener,
     SecondFragment.SecondFragmentListener {
-
     private FirstFragment firstFragment;
-    private int prevResult = 0;
-    private int min = 0;
-    private int max = 0;
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,15 +26,13 @@ public class MainActivity extends AppCompatActivity implements FirstFragment.Fir
         final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, firstFragment);
         transaction.commit();
-        // TODO: invoke function which apply changes of the transaction
     }
 
     private void openSecondFragment(int min, int max) {
-        // TODO: implement it
         final Fragment secondFragment = SecondFragment.newInstance(min, max);
         final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, secondFragment);
-        transaction.addToBackStack("Privet");
+        transaction.addToBackStack("");
         transaction.commit();
     }
 
@@ -51,7 +44,6 @@ public class MainActivity extends AppCompatActivity implements FirstFragment.Fir
     @Override
     public void getRandomValue(@NotNull String value) {
         firstFragment.getValue(value);
-        //Toast.makeText(this, value, Toast.LENGTH_LONG).show();
     }
 
 }

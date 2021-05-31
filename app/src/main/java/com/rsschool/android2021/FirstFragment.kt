@@ -43,7 +43,6 @@ class FirstFragment : Fragment() {
         tvMax = view.findViewById(R.id.max_value)
 
         generateButton?.setOnClickListener {
-            // TODO: send min and max to the SecondFragment
             if (validate()){
                 val min = tvMin.text.toString().toInt()
                 val max = tvMax.text.toString().toInt()
